@@ -1,0 +1,2 @@
+let lastNames = ['Almeida', 'Alcantara', 'Silva', 'Fernande', 'Albuquerque', 'Araujo', 'Reis', 'Sales', 'Nascimento', 'Soares', 'Lins', 'Grangeiro', 'Aragão', 'Figueiredo', 'Martins', 'Souza', 'Junior', 'Melo', 'Santarém']
+module.exports = lastNames
