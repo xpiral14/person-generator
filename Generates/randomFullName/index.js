@@ -35,4 +35,5 @@ function randomFullName(total = 1, gender = 'any') {
     }
     return fullName
 }
-console.log(randomFullName(2, 'any'));
+
+module.exports = randomFullName
