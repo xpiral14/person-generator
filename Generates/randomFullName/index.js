@@ -26,14 +26,15 @@ function randomFullName(total = 1, gender = 'any') {
     function randomPerson(total, gender) {
         let person = []
         for (let i = 0; i < total; i++) {
-            person.push(random(gender) + ' ' + random(lastnames))
+            let nome = random(gender)
+            let lastname = random(lastnames)
+            person.push({nome: nome.nome + ' ' + lastname, sexo: nome.sexo})
         }
         return person
     }
     if(fullName.length === 1){
-        fullName = fullName.join("")
+        fullName = fullName[0]
     }
     return fullName
 }
-
 module.exports = randomFullName
