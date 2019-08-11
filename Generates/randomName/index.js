@@ -1,7 +1,7 @@
-const maleNames = require('../../Person/Names').maleNames
-const femaleNames = require('../../Person/Names').femaleNames
-const any = require('../../Person/Names').anyName
-
+const maleNames = require('../../Utils/Person/Names').maleNames
+const femaleNames = require('../../Utils/Person/Names').femaleNames
+const any = require('../../Utils/Person/Names').anyName
+const {random} = require('../../Utils')
 function randomName(t = 1, gender = 'any') {
     if (isNaN(t)) {
         return "Impossivel gerar pessoa"
@@ -13,22 +13,22 @@ function randomName(t = 1, gender = 'any') {
     switch (gender) {
         case 'any':
             for (i = 0; i < total; i++) {
-                names.push(any[Math.floor(Math.random() * any.length)])
+                names.push(random(any).nome)
             }
             break;
         case 'm':
             for (i = 0; i < total; i++) {
-                names.push(maleNames[Math.floor(Math.random() * maleNames.length)])
+                names.push(random(maleNames).nome)
             }
             break;
         case 'f':
             for (i = 0; i < total; i++) {
-                names.push(femaleNames[Math.floor(Math.random() * femaleNames.length)])
+                names.push(random(femaleNames)).nome
             }
             break;
     }
     if(names.length === 1){
-        names = names.join("")
+        names = names[0].nome
     }
     return names
 }

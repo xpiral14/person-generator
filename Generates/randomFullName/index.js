@@ -1,9 +1,14 @@
-const maleNames = require('../../Person/Names').maleNames
-const femaleNames = require('../../Person/Names').femaleNames
-const lastnames = require('../../Person/LastNames')
-const any = require('../../Person/Names').anyName
-const random = require('../../Utils/random')
-
+const maleNames = require('../../Utils/Person/Names').maleNames
+const femaleNames = require('../../Utils/Person/Names').femaleNames
+const lastnames = require('../../Utils/Person/LastNames')
+const any = require('../../Utils/Person/Names').anyName
+const {random} = require('../../Utils')
+/**
+ * Generate names as many you want
+ * @param {number} total 
+ * @param {string} gender 
+ * 
+ */
 function randomFullName(total = 1, gender = 'any') {
     if (isNaN(total || total < 1 || typeof gender !== 'string' || gender !== 'any' || gender !== 'm' || gender !== 'f')) {
         return "Imposivel gerar nome Inteiro"

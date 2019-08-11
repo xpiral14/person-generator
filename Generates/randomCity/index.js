@@ -1,9 +1,12 @@
-const cityEstate = require('../../Cidade&Estado/index')
-const random = require('../../Utils/random')
+const cityEstate = require('../../Utils/Cidade&Estado/index')
+const {random} = require('../../Utils')
 const {
     estados
 } = cityEstate
-
+/**
+ * Create as many city as you need
+ * @param {number} howMany 
+ */
 function generateCity(howMany = 1) {
     let result;
     if (howMany === 1) {

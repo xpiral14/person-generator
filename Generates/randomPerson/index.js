@@ -1,12 +1,12 @@
+const cityState = require('../randomCity&State')
 const fullName = require('../randomFullName')
 const randomTel = require('../randomTel')
-const cityState = require('../randomCity&State')
 /**
  * Create as many people as you need
  * @param {number} howmany : howmany persons you want create
  * 
  */
-function randomPerson(howmany) {
+function randomPerson(howmany = 1) {
     if (isNaN(howmany) || howmany < 1) {
         throw 'Insira um número válido!'
     }
@@ -23,7 +23,7 @@ function randomPerson(howmany) {
         }
     } else {
         person = []
-        for (let i = 0; i < howmany.length; i++) {
+        for (let i = 0; i < howmany; i++) {
             person.push({
                 name: name.nome,
                 sexo: name.sexo,

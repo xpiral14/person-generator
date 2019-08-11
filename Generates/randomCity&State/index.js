@@ -1,10 +1,13 @@
 //Cities and states
-let cE = require('../../Cidade&Estado')
-const random = require('../../Utils/random')
+let cE = require('../../Utils/Cidade&Estado')
+const {random} = require('../../Utils')
 let {
     estados
 } = cE
-
+/**
+ * Create as many city as you need
+ * @param {number} howmany 
+ */
 function cityState(howmany = 1) {
     if(isNaN(howmany) || howmany < 1) throw "Impossivel gerar Estado com cidade"
     let result
