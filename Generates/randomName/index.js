@@ -32,4 +32,5 @@ function randomName(t = 1, gender = 'any') {
     }
     return names
 }
+
 module.exports = randomName

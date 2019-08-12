@@ -2,7 +2,9 @@ const maleNames = require('../../Utils/Person/Names').maleNames
 const femaleNames = require('../../Utils/Person/Names').femaleNames
 const lastnames = require('../../Utils/Person/LastNames')
 const any = require('../../Utils/Person/Names').anyName
-const {random} = require('../../Utils')
+const {
+    random
+} = require('../../Utils')
 /**
  * Generate names as many you want
  * @param {number} total 
@@ -25,7 +27,8 @@ function randomFullName(total = 1, gender = 'any') {
             fullName.push(...randomPerson(total, maleNames))
             break;
 
-        default: break;
+        default:
+            break;
     }
 
     function randomPerson(total, gender) {
@@ -33,11 +36,18 @@ function randomFullName(total = 1, gender = 'any') {
         for (let i = 0; i < total; i++) {
             let nome = random(gender)
             let lastname = random(lastnames)
-            person.push({nome: nome.nome + ' ' + lastname, sexo: nome.sexo})
+            person.push({
+                nome: nome.nome,
+                sobrenome: lastname,
+                nomeCompleto: function () {
+                    return `${this.nome} ${this.sobrenome}`
+                },
+                sexo: nome.sexo
+            })
         }
         return person
     }
-    if(fullName.length === 1){
+    if (fullName.length === 1) {
         fullName = fullName[0]
     }
     return fullName
